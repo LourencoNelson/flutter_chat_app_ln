@@ -1,0 +1,82 @@
+{
+  "project_info": {
+    "project_number": "676595526174",
+    "project_id": "flutter-chat-app-ln",
+    "storage_bucket": "flutter-chat-app-ln.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:676595526174:android:38d6135c42003ec4041c0f",
+        "android_client_info": {
+          "package_name": "com.example.chat_app_ln"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "676595526174-0g04pf689p6nn4duibbjtc00kli3ss3j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCxQi4R5OUY3bDE6cWTtZu7kNMAMFK4_hg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "676595526174-0g04pf689p6nn4duibbjtc00kli3ss3j.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "676595526174-8certf97b0e7kkf2pnlu7scfntvqi7dr.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.lourenco.chatAppLn"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:676595526174:android:095d75246355dae9041c0f",
+        "android_client_info": {
+          "package_name": "com.lourenco.chat_app_ln"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "676595526174-0g04pf689p6nn4duibbjtc00kli3ss3j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCxQi4R5OUY3bDE6cWTtZu7kNMAMFK4_hg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "676595526174-0g04pf689p6nn4duibbjtc00kli3ss3j.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "676595526174-8certf97b0e7kkf2pnlu7scfntvqi7dr.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.lourenco.chatAppLn"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
