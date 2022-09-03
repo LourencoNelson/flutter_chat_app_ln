@@ -1,16 +1,14 @@
-# chat_app_ln
+# Flutter Chat App
 
-A new Flutter project.
+A simple Flutter chat app project for ICT4DEV Summer Schools
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+This is a basic version of a chat app developed using the Flutter framework
 
-A few resources to get you started if this is your first Flutter project:
+To run the app locally you will need to update ("save") the pubspec.yaml file in the root directory to get all the dependecies needed
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+TIPS:
+Run the app using two different devices to simulate a chat scenario
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
