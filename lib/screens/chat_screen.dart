@@ -22,6 +22,7 @@ class _ChatScreenState extends State<ChatScreen> {
 
   @override
   void initState() {
+    super.initState;
     getCurrentUser();
   }
 
@@ -36,26 +37,15 @@ class _ChatScreenState extends State<ChatScreen> {
     }
   }
 
-  // void getMessages() async {
-  //   final messages = await firestore.collection('messages').get();
-  //   for (var message in messages.docs) {
-  //     print(message.data());
-  //   }
-  // }
-
-  void messagesStream() async {
-    await for (var snapshots in firestore.collection('messages').snapshots()) {
-      for (var message in snapshots.docs) {
-        print(message.data());
-      }
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('CHAT'),
+        title: const Text(
+          'Chat',
+          style: TextStyle(fontFamily: 'Quicksand'),
+        ),
+        automaticallyImplyLeading: false,
         actions: [
           IconButton(
             onPressed: () {
@@ -63,7 +53,7 @@ class _ChatScreenState extends State<ChatScreen> {
               Navigator.popUntil(context, ModalRoute.withName('/'));
               // messagesStream();
             },
-            icon: Icon(Icons.close),
+            icon: const Icon(Icons.close),
           ),
         ],
       ),
@@ -73,33 +63,71 @@ class _ChatScreenState extends State<ChatScreen> {
         children: [
           const MessageStream(),
           Container(
+            padding: const EdgeInsets.all(5),
             decoration: const BoxDecoration(
               border: Border(
-                top: BorderSide(color: Colors.blue, width: 1.5),
+                top: BorderSide(color: Colors.blueAccent, width: 1.5),
               ),
             ),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Expanded(
-                  child: TextField(
-                    controller: messageTextController,
+            child: Flexible(
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Expanded(
+                    child: TextField(
+                      decoration: const InputDecoration(
+                        // hintText: 'Enter your email',
+                        contentPadding: EdgeInsets.symmetric(
+                            vertical: 10.0, horizontal: 20.0),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(10),
+                            // bottomLeft: Radius.circular(10),
+                            bottomRight: Radius.circular(10),
+                          ),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide:
+                              BorderSide(color: Colors.blueAccent, width: 1.3),
+                          borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(10),
+                            // bottomLeft: Radius.circular(10),
+                            bottomRight: Radius.circular(10),
+                          ),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide:
+                              BorderSide(color: Colors.blueAccent, width: 2.0),
+                          borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(10),
+                            // bottomLeft: Radius.circular(10),
+                            bottomRight: Radius.circular(10),
+                          ),
+                        ),
+                      ),
+                      controller: messageTextController,
+                    ),
                   ),
-                ),
-                TextButton(
-                  onPressed: () {
-                    messageText = messageTextController.text;
-                    firestore.collection('messages').add({
-                      'text': messageText,
-                      'sender': loggedUser!.email,
-                    }).catchError((e) {
-                      print(e);
-                    });
-                    messageTextController.clear();
-                  },
-                  child: const Text('Send'),
-                ),
-              ],
+                  TextButton(
+                    onPressed: () {
+                      messageText = messageTextController.text;
+                      firestore.collection('messages').add({
+                        'text': messageText,
+                        'sender': loggedUser!.email,
+                      }).catchError((e) {
+                        print(e);
+                      });
+                      messageTextController.clear();
+                    },
+                    child: const Text(
+                      'Send',
+                      style: TextStyle(
+                          color: Colors.blueAccent,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ],
@@ -183,27 +211,42 @@ class Message extends StatelessWidget {
             ),
           ),
           Material(
-            elevation: 5,
-            borderRadius: isMe
-                ? const BorderRadius.only(
-                    topLeft: Radius.circular(10),
-                    // bottomLeft: Radius.circular(10),
-                    bottomRight: Radius.circular(10),
-                  )
-                : const BorderRadius.only(
-                    topRight: Radius.circular(10),
-                    // topLeft: Radius.circular(10),
-                    bottomLeft: Radius.circular(10),
-                    // bottomRight: Radius.circular(10),
-                  ),
-            color: isMe ? Colors.lightBlueAccent : Colors.white,
+            shape: RoundedRectangleBorder(
+              borderRadius: isMe
+                  ? const BorderRadius.only(
+                      topLeft: Radius.circular(10),
+                      // bottomLeft: Radius.circular(10),
+                      bottomRight: Radius.circular(10),
+                    )
+                  : const BorderRadius.only(
+                      topRight: Radius.circular(10),
+                      // topLeft: Radius.circular(10),
+                      bottomLeft: Radius.circular(10),
+                      // bottomRight: Radius.circular(10),
+                    ),
+              side: const BorderSide(color: Colors.blueAccent, width: 1.5),
+            ),
+            elevation: 8,
+            // borderRadius: isMe
+            //     ? const BorderRadius.only(
+            //         topLeft: Radius.circular(10),
+            //         // bottomLeft: Radius.circular(10),
+            //         bottomRight: Radius.circular(10),
+            //       )
+            //     : const BorderRadius.only(
+            //         topRight: Radius.circular(10),
+            //         // topLeft: Radius.circular(10),
+            //         bottomLeft: Radius.circular(10),
+            //         // bottomRight: Radius.circular(10),
+            //       ),
+            color: isMe ? Colors.blueAccent : Colors.white,
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
               child: Text(
                 text,
                 style: TextStyle(
                   fontSize: 15,
-                  color: isMe ? Colors.white : Colors.lightBlueAccent,
+                  color: isMe ? Colors.white : Colors.blueAccent,
                 ),
               ),
             ),

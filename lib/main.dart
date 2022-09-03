@@ -23,12 +23,16 @@ class ChatApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+          appBarTheme: const AppBarTheme(backgroundColor: Colors.blueAccent),
+          fontFamily: 'Quicksand'),
+      // theme: ThemeData(primarySwatch: Colors.blueAccent),
       initialRoute: '/',
       routes: {
-        '/': (context) => WelcomeScreen(),
-        '/registration': (context) => RegistrationScreen(),
-        '/login': (context) => LoginScreen(),
-        '/chat': (context) => ChatScreen(),
+        '/': (context) => const WelcomeScreen(),
+        '/registration': (context) => const RegistrationScreen(),
+        '/login': (context) => const LoginScreen(),
+        '/chat': (context) => const ChatScreen(),
       },
     );
   }
