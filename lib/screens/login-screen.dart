@@ -70,6 +70,7 @@ class _LoginScreenState extends State<LoginScreen> {
               child: TextField(
                 decoration: const InputDecoration(
                   hintText: 'Enter your email',
+                  labelText: 'Email',
                   contentPadding:
                       EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
                   border: OutlineInputBorder(
@@ -107,7 +108,9 @@ class _LoginScreenState extends State<LoginScreen> {
             Padding(
               padding: const EdgeInsets.all(10.0),
               child: TextField(
+                obscureText: true,
                 decoration: const InputDecoration(
+                  labelText: 'Password',
                   hintText: 'Enter your password',
                   contentPadding:
                       EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),

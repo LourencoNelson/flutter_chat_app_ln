@@ -87,6 +87,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
             child: TextField(
               decoration: const InputDecoration(
                 hintText: 'Enter your email',
+                labelText: 'Email',
                 contentPadding:
                     EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
                 border: OutlineInputBorder(
@@ -122,8 +123,10 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
           Padding(
             padding: const EdgeInsets.all(10.0),
             child: TextField(
+              obscureText: true,
               decoration: const InputDecoration(
                 hintText: 'Enter a password',
+                labelText: 'Password',
                 contentPadding:
                     EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
                 border: OutlineInputBorder(
