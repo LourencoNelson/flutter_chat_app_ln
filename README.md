@@ -12,4 +12,6 @@ TIPS:
 Run the app using two or multple devices to simulate a chat scenario
 
 DISCLAIMER: 
+It might not work on android devices, try to run it using a web browser in that case. I didn't test it on android. 
+
 Work in progress
