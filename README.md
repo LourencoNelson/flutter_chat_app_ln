@@ -9,6 +9,6 @@ This is a basic version of a chat app developed using the Flutter framework
 To run the app locally you will need to update ("save") the pubspec.yaml file in the root directory to get all the dependecies needed
 
 TIPS:
-Run the app using two different devices to simulate a chat scenario
+Run the app using two or multple devices to simulate a chat scenario
 
 
