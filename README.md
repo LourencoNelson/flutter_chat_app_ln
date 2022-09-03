@@ -11,4 +11,5 @@ To run the app locally you will need to update ("save") the pubspec.yaml file in
 TIPS:
 Run the app using two or multple devices to simulate a chat scenario
 
-
+DISCLAIMER: 
+Work in progress
